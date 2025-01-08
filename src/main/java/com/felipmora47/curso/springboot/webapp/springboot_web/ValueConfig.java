@@ -5,7 +5,7 @@ import org.springframework.context.annotation.PropertySource;
 
 @Configuration
 // Agregar un nuevo archivo de propiedades con PropertySource en una Clase aparte de SpringbootWebApplication.java
-@PropertySource("classpath:values.properties")
+@PropertySource(value="classpath:values.properties", encoding = "UTF-8")
 public class ValueConfig {
 
 }
