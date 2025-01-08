@@ -9,6 +9,7 @@ import com.felipmora47.curso.springboot.webapp.springboot_web.models.dto.ParamDt
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,6 +21,17 @@ import org.springframework.web.bind.annotation.RequestBody;
 @RestController
 @RequestMapping("/api/path")
 public class PathVariableController {
+
+    //Inyección de Valores de application.properties con @Value
+    @Value("${config.username}")
+    private String username;
+    @Value("${config.password}")
+    private String password;
+    @Value("${config.listOfValues}")
+    private String[]  listOfValues;
+   /*  @Value("${config.code}")
+    private Integer  code; */
+
 
     @GetMapping("/path-variable/{message}")
     public ParamDto variable(@PathVariable String message){
@@ -51,5 +63,18 @@ public class PathVariableController {
         return user;
     }
     
+
+
+    @GetMapping("/values-config")
+    public Map<String,Object> values(@Value("${config.code}") Integer code){
+        Map<String, Object> json = new HashMap<>();
+
+        json.put("username", username);
+        json.put("password", password);
+        json.put("listOfValues", listOfValues);
+        json.put("code", code);
+        return json;
+
+    }
     
 }
