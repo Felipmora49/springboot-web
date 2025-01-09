@@ -70,11 +70,6 @@ public class UserController {
     }
     
 
-
-
-
-
-
     // Funcion con Map
     /*
     public String details(Map<String,Object> model) {
