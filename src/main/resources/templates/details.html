@@ -13,5 +13,20 @@
         <li th:if="${user.email}" th:text="${user.email}"></li>
         <li th:if="${user.email == null}" th:text="${'No tiene email'}"></li>
     </ul>
+    <a th:href="@{/list-details}">Ver Listado</a>
+    <br>
+    <a th:href="@{'/api/params/params-details?message=' + ${title}}">Ver  Mensaje 1</a>
+    <br>
+    <a th:href="@{/api/params/params-details?message=Hola que tal Julian}">Ver Segundo  2 </a>
+    <br>
+    <a th:href="@{/api/params/params-details(message='Otra forma de envio de mensaje')}">Ver Mensaje 3</a>
+    <br>
+    <a th:href="@{/api/params/param-bar(text='Envio de dos valores', code=123234)}">Ver Mensaje 4</a>
+    <br>
+
+    <!--Envio de valores de variables del Controlador Path --->
+    <a th:href="@{/api/path/mix-variables/1/Realme 6/160000}">Ver Mensaje 5 </a>
+
+
 </body>
 </html>

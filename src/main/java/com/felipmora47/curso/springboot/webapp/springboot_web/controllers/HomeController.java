@@ -14,7 +14,7 @@ public class HomeController {
         // return "redirect:/list-details";
 
         //Usa un forward para redireccionar a la pagina de list-details no cambia la URL
-        return "forward:/list-details";
+        return "forward:/details";
     }
     
 }
